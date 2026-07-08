@@ -7,37 +7,43 @@
 - 4カテゴリ（食材 / 国 / 世界観 / ランダムワード）から1つずつランダム抽選
 - 抽選結果と生成アイデアを `results.json` に自動保存
 - 過去の結果をカテゴリ別に検索
-- 外部依存ゼロ（Python 3.10+ 標準ライブラリのみ）
+- 外部依存ゼロ（Python 3.10+ 標準ライブラリのみ、[Poetry](https://python-poetry.org/) で環境管理）
+
+## セットアップ
+
+```bash
+poetry install
+```
 
 ## 使い方
 
 ```bash
 # ルーレットを回す（結果は自動保存）
-python food_roulette.py spin
+poetry run python food_roulette.py spin
 
 # 保存しないで回す
-python food_roulette.py spin --no-save
+poetry run python food_roulette.py spin --no-save
 
 # 履歴を全件表示（新しい順）
-python food_roulette.py history
+poetry run python food_roulette.py history
 
 # 直近5件だけ表示
-python food_roulette.py history -n 5
+poetry run python food_roulette.py history -n 5
 
 # カテゴリで検索
-python food_roulette.py search 食材 鮭
-python food_roulette.py search 国 フランス
-python food_roulette.py search 世界観 サイバーパンク
-python food_roulette.py search ワード 雨季
+poetry run python food_roulette.py search 食材 鮭
+poetry run python food_roulette.py search 国 フランス
+poetry run python food_roulette.py search 世界観 サイバーパンク
+poetry run python food_roulette.py search ワード 雨季
 
 # カテゴリ名は英語も使えます
-python food_roulette.py search ingredient 牛肉
-python food_roulette.py search country タイ
-python food_roulette.py search world 江戸時代
-python food_roulette.py search word 月光
+poetry run python food_roulette.py search ingredient 牛肉
+poetry run python food_roulette.py search country タイ
+poetry run python food_roulette.py search world 江戸時代
+poetry run python food_roulette.py search word 月光
 
 # カテゴリ一覧（全アイテム）を表示
-python food_roulette.py categories
+poetry run python food_roulette.py categories
 ```
 
 ## 実行例
@@ -71,6 +77,8 @@ python food_roulette.py categories
 Food-Roulette/
 ├── food_roulette.py   # メインスクリプト（依存なし）
 ├── results.json       # 抽選結果（自動生成・.gitignore対象）
+├── pyproject.toml
+├── poetry.lock
 ├── .gitignore
 └── README.md
 ```
@@ -78,3 +86,4 @@ Food-Roulette/
 ## 要件
 
 - Python 3.10 以上
+- [Poetry](https://python-poetry.org/)

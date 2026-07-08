@@ -1,0 +1,21 @@
+[project]
+name = "food-roulette"
+version = "0.1.0"
+description = "CLI tool that generates cooking ideas from random combinations of ingredients, countries, and themes"
+authors = [
+    {name = "QuQuLa89"}
+]
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=8.0)"
+]
