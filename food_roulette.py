@@ -30,35 +30,119 @@ if sys.platform == "win32":
 
 INGREDIENTS: list[str] = [
     # 魚介
-    "鮭", "マグロ", "タコ", "イカ", "サバ", "鯛", "ウナギ", "カツオ", "エビ", "ホタテ",
-    "アジ", "ブリ", "ヒラメ", "カニ", "牡蠣",
+    "鮭",
+    "マグロ",
+    "タコ",
+    "イカ",
+    "サバ",
+    "鯛",
+    "ウナギ",
+    "カツオ",
+    "エビ",
+    "ホタテ",
+    "アジ",
+    "ブリ",
+    "ヒラメ",
+    "カニ",
+    "牡蠣",
     # 肉
-    "牛肉", "豚肉", "鶏肉", "羊肉", "鴨肉", "ベーコン", "ラム肉", "猪肉",
+    "牛肉",
+    "豚肉",
+    "鶏肉",
+    "羊肉",
+    "鴨肉",
+    "ベーコン",
+    "ラム肉",
+    "猪肉",
     # 野菜
-    "トマト", "じゃがいも", "なす", "ほうれん草", "かぼちゃ", "にんじん", "ゴーヤ",
-    "れんこん", "ごぼう", "たけのこ",
+    "トマト",
+    "じゃがいも",
+    "なす",
+    "ほうれん草",
+    "かぼちゃ",
+    "にんじん",
+    "ゴーヤ",
+    "れんこん",
+    "ごぼう",
+    "たけのこ",
     # その他
-    "豆腐", "しいたけ", "舞茸", "卵", "チーズ", "米", "パスタ", "そば",
+    "豆腐",
+    "しいたけ",
+    "舞茸",
+    "卵",
+    "チーズ",
+    "米",
+    "パスタ",
+    "そば",
 ]
 
 COUNTRIES: list[str] = [
-    "アメリカ", "フランス", "イタリア", "日本", "中国", "インド",
-    "メキシコ", "タイ", "スペイン", "モロッコ", "ブラジル", "ペルー",
-    "エチオピア", "韓国", "トルコ", "ベトナム", "ギリシャ", "レバノン",
-    "アルゼンチン", "ポルトガル",
+    "アメリカ",
+    "フランス",
+    "イタリア",
+    "日本",
+    "中国",
+    "インド",
+    "メキシコ",
+    "タイ",
+    "スペイン",
+    "モロッコ",
+    "ブラジル",
+    "ペルー",
+    "エチオピア",
+    "韓国",
+    "トルコ",
+    "ベトナム",
+    "ギリシャ",
+    "レバノン",
+    "アルゼンチン",
+    "ポルトガル",
 ]
 
 WORLDS: list[str] = [
-    "サイバーパンク", "ファンタジー中世", "スチームパンク", "近未来SF",
-    "西部開拓時代", "江戸時代", "北欧神話時代", "ディストピア",
-    "宇宙コロニー", "海底都市", "妖怪の世界", "レトロフューチャー",
-    "ポスト・アポカリプス", "古代文明", "魔法学校",
+    "サイバーパンク",
+    "ファンタジー中世",
+    "スチームパンク",
+    "近未来SF",
+    "西部開拓時代",
+    "江戸時代",
+    "北欧神話時代",
+    "ディストピア",
+    "宇宙コロニー",
+    "海底都市",
+    "妖怪の世界",
+    "レトロフューチャー",
+    "ポスト・アポカリプス",
+    "古代文明",
+    "魔法学校",
 ]
 
 RANDOM_WORDS: list[str] = [
-    "雨季", "茶葉", "月光", "霧", "錆", "砂嵐", "桜吹雪", "深夜", "真夏", "雪解け",
-    "廃墟", "蜃気楼", "満潮", "霜", "煙草の煙", "泥炭", "星屑", "珊瑚",
-    "枯れ葉", "朝靄", "稲妻", "潮風", "蜂蜜", "火山灰", "永久凍土",
+    "雨季",
+    "茶葉",
+    "月光",
+    "霧",
+    "錆",
+    "砂嵐",
+    "桜吹雪",
+    "深夜",
+    "真夏",
+    "雪解け",
+    "廃墟",
+    "蜃気楼",
+    "満潮",
+    "霜",
+    "煙草の煙",
+    "泥炭",
+    "星屑",
+    "珊瑚",
+    "枯れ葉",
+    "朝靄",
+    "稲妻",
+    "潮風",
+    "蜂蜜",
+    "火山灰",
+    "永久凍土",
 ]
 
 IDEA_TEMPLATES: list[str] = [
@@ -92,6 +176,7 @@ CATEGORY_ALIASES: dict[str, str] = {
 # ストレージ
 # ─────────────────────────────────────────
 
+
 def load_results() -> list[dict]:
     if not RESULTS_FILE.exists():
         return []
@@ -111,9 +196,11 @@ def save_result(entry: dict) -> None:
         encoding="utf-8",
     )
 
+
 # ─────────────────────────────────────────
 # ルーレット・アイデア生成
 # ─────────────────────────────────────────
+
 
 def spin() -> dict[str, str]:
     return {
@@ -127,11 +214,13 @@ def spin() -> dict[str, str]:
 def generate_idea(combo: dict[str, str]) -> str:
     return random.choice(IDEA_TEMPLATES).format(**combo)
 
+
 # ─────────────────────────────────────────
 # 表示ヘルパー
 # ─────────────────────────────────────────
 
 SEP = "─" * 50
+
 
 def print_entry(index: int | None, entry: dict) -> None:
     ts = entry.get("timestamp", "")[:16].replace("T", " ")
@@ -144,9 +233,11 @@ def print_entry(index: int | None, entry: dict) -> None:
     print(f"      アイデア: {entry.get('アイデア', '-')}")
     print()
 
+
 # ─────────────────────────────────────────
 # サブコマンド実装
 # ─────────────────────────────────────────
+
 
 def cmd_spin(args: argparse.Namespace) -> None:
     combo = spin()
@@ -215,7 +306,7 @@ def cmd_search(args: argparse.Namespace) -> None:
 
 def cmd_categories(_args: argparse.Namespace) -> None:
     def fmt(items: list[str], cols: int = 5) -> str:
-        rows = [items[i:i + cols] for i in range(0, len(items), cols)]
+        rows = [items[i : i + cols] for i in range(0, len(items), cols)]
         return "\n    ".join("  ".join(f"{v:<12}" for v in row) for row in rows)
 
     print(f"\nカテゴリ一覧\n{SEP}")
@@ -229,9 +320,11 @@ def cmd_categories(_args: argparse.Namespace) -> None:
     print(f"    {fmt(RANDOM_WORDS)}")
     print()
 
+
 # ─────────────────────────────────────────
 # エントリーポイント
 # ─────────────────────────────────────────
+
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
@@ -253,14 +346,20 @@ def build_parser() -> argparse.ArgumentParser:
     sub.required = True
 
     p_spin = sub.add_parser("spin", help="ルーレットを回してアイデアを生成・保存")
-    p_spin.add_argument("--no-save", action="store_true", help="結果を results.json に保存しない")
+    p_spin.add_argument(
+        "--no-save", action="store_true", help="結果を results.json に保存しない"
+    )
     p_spin.set_defaults(func=cmd_spin)
 
     p_hist = sub.add_parser("history", help="過去の抽選結果を新しい順に表示")
-    p_hist.add_argument("-n", "--limit", type=int, metavar="N", help="表示する件数 (省略時: 全件)")
+    p_hist.add_argument(
+        "-n", "--limit", type=int, metavar="N", help="表示する件数 (省略時: 全件)"
+    )
     p_hist.set_defaults(func=cmd_history)
 
-    p_search = sub.add_parser("search", help="カテゴリと検索ワードで過去の結果を絞り込む")
+    p_search = sub.add_parser(
+        "search", help="カテゴリと検索ワードで過去の結果を絞り込む"
+    )
     p_search.add_argument(
         "category",
         help="カテゴリ名 (食材/ingredient, 国/country, 世界観/world, ワード/word)",
