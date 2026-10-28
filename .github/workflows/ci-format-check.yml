@@ -20,6 +20,9 @@ jobs:
       - uses: astral-sh/ruff-action@v3
         with:
           args: "format --check"
+      - uses: astral-sh/ruff-action@v3
+        with:
+          args: "check"
 
   pr-title:
     name: Conventional Commits PR Title Check

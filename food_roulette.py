@@ -272,6 +272,10 @@ def cmd_history(args: argparse.Namespace) -> None:
         print("保存済みの結果はありません。まず 'spin' コマンドを実行してください。")
         return
 
+    if args.limit is not None and args.limit <= 0:
+        print("エラー: 件数 (-n) には1以上の整数を指定してください。")
+        return
+
     limit = args.limit or len(results)
     recent = list(reversed(results[-limit:]))
 
